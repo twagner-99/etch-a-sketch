@@ -11,27 +11,27 @@
     <div id="container"></div>
     
     <script>
-        const container = document.querySelector("#container");
-
-        for (let i = 0; i < 256; i++) {
-            const gridSquare = document.createElement("div");
-            gridSquare.classList.add("square");
-            container.appendChild(gridSquare);
-        }
-
-        const colorSquares = document.querySelectorAll(".square");
-        
-        colorSquares.forEach((colorSquare) => {
-            colorSquare.addEventListener("mouseover", () => {
-                colorSquare.classList.add("hovered");
-            });
-        });
-
         const userInput = document.querySelector("#input-btn");
 
         userInput.addEventListener("click", () => {
             let gridSize = prompt("Enter number squares per side.");
-        })
+
+            const container = document.querySelector("#container");
+
+            for (let i = 0; i < (gridSize * gridSize); i++) {
+                const gridSquare = document.createElement("div");
+                gridSquare.classList.add("square");
+                container.appendChild(gridSquare);
+            }
+
+            const colorSquares = document.querySelectorAll(".square");
+        
+            colorSquares.forEach((colorSquare) => {
+                colorSquare.addEventListener("mouseover", () => {
+                    colorSquare.classList.add("hovered");
+                });
+            });
+        });
 
     </script>
 </body>
