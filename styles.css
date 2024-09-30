@@ -15,3 +15,7 @@
 .hovered {
     background-color: #5580b1;
 }
+
+button {
+    margin-bottom: 10px;
+}

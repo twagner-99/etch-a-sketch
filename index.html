@@ -7,6 +7,7 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <button id="input-btn">Choose Your Grid!</button>
     <div id="container"></div>
     
     <script>
@@ -25,6 +26,13 @@
                 colorSquare.classList.add("hovered");
             });
         });
+
+        const userInput = document.querySelector("#input-btn");
+
+        userInput.addEventListener("click", () => {
+            let gridSize = prompt("Enter number squares per side.");
+        })
+
     </script>
 </body>
 </html>
