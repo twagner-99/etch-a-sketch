@@ -11,3 +11,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.hovered {
+    background-color: #5580b1;
+}

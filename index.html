@@ -17,6 +17,14 @@
             gridSquare.classList.add("square");
             container.appendChild(gridSquare);
         }
+
+        const colorSquares = document.querySelectorAll(".square");
+        
+        colorSquares.forEach((colorSquare) => {
+            colorSquare.addEventListener("mouseover", () => {
+                colorSquare.classList.add("hovered");
+            });
+        });
     </script>
 </body>
 </html>
