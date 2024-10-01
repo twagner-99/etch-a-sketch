@@ -12,15 +12,16 @@
     
     <script>
         const userInput = document.querySelector("#input-btn");
+        const container = document.querySelector("#container");
 
-        userInput.addEventListener("click", () => {
-            let gridSize = prompt("Enter number squares per side.");
+        let gridSizeDefault = 5;
 
-            const container = document.querySelector("#container");
-
+        function createGrid(gridSize) {
             for (let i = 0; i < (gridSize * gridSize); i++) {
                 const gridSquare = document.createElement("div");
-                gridSquare.classList.add("square");
+                gridSquare.classList.add("square"); // For CSS and nodeList
+                gridSquare.style.height = gridSize + "px"; // Went this route because setAttribute DID NOT WORK
+                gridSquare.style.width = gridSize + "px";
                 container.appendChild(gridSquare);
             }
 
@@ -28,10 +29,27 @@
         
             colorSquares.forEach((colorSquare) => {
                 colorSquare.addEventListener("mouseover", () => {
-                    colorSquare.classList.add("hovered");
+                    colorSquare.classList.add("hovered"); // For CSS
                 });
+            });            
+        }
+
+        createGrid(gridSizeDefault);
+
+        userInput.addEventListener("click", () => {
+            let gridSizeUser = prompt("Enter number squares per side."); 
+            const removeSquares = document.querySelectorAll(".square");
+
+            removeSquares.forEach((removeSquare) => {
+                container.removeChild(removeSquare);
             });
+
+            createGrid(gridSizeUser);
         });
+
+        // create function for the for loop, initiate grid size to start
+        // at 16 x 16, then call function on click to clean it up.
+        // then need to come up with a relationship to keep things square
 
     </script>
 </body>
