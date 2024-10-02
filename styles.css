@@ -4,8 +4,8 @@
 }
 
 #container {
-    height: 1000px;
-    width: 1000px;
+    height: 875px;
+    width: 875px;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid black;
@@ -13,7 +13,7 @@
     /* align-content no longer needed after including formula to auto adjust square sizes to force a square grid */
 }
 
-/* .hovered {
+/* .hovered {                       Not needed for color randomizing because adding inline styles.
     background-color: #5580b1;
 } */
 
