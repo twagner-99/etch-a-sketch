@@ -14,14 +14,14 @@
         const userInput = document.querySelector("#input-btn");
         const container = document.querySelector("#container");
 
-        let gridSizeDefault = 5;
+        let gridSizeDefault = 16;
 
         function createGrid(gridSize) {
             for (let i = 0; i < (gridSize * gridSize); i++) {
                 const gridSquare = document.createElement("div");
                 gridSquare.classList.add("square"); // For CSS and nodeList
                 gridSquare.style.height = (750 / gridSize) + "px"; // Went this route because setAttribute DID NOT WORK
-                gridSquare.style.width = (750 / gridSize) + "px";
+                gridSquare.style.width = (750 / gridSize) + "px"; // Formula auto adjusts square sizes so grid is gridSize x gridSize in given space
                 container.appendChild(gridSquare);
             }
 
@@ -37,20 +37,23 @@
         createGrid(gridSizeDefault);
 
         userInput.addEventListener("click", () => {
-            let gridSizeUser = prompt("Enter number squares per side."); 
-            const removeSquares = document.querySelectorAll(".square");
+            let gridSizeUser = prompt("Enter number squares per side.");
+            
+            if (gridSizeUser <= 100) {
+                const removeSquares = document.querySelectorAll(".square");
 
-            removeSquares.forEach((removeSquare) => {
-                container.removeChild(removeSquare);
-            });
+                removeSquares.forEach((removeSquare) => {
+                    container.removeChild(removeSquare);
+                });
 
-            createGrid(gridSizeUser);
+                createGrid(gridSizeUser);
+            }
+
+            else {
+                alert("Please enter a number less than or equal to 100.");
+            }
+            
         });
-
-        // create function for the for loop, initiate grid size to start
-        // at 16 x 16, then call function on click to clean it up.
-        // then need to come up with a relationship to keep things square
-
     </script>
 </body>
 </html>

@@ -8,7 +8,8 @@
     width: 750px;
     display: flex;
     flex-wrap: wrap;
-    align-content: start; /* Keeps everything up at top instead of default behavior */
+    /* align-content: start; Keeps everything up at top instead of default behavior */
+    /* align-content no longer needed after including formula to auto adjust square sizes to force a square grid */
 }
 
 .hovered {
