@@ -1,11 +1,11 @@
 .square {
     box-sizing: border-box; /* Allows borders while maintaining height/width values */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 #container {
-    height: 750px;
-    width: 750px;
+    height: 1000px;
+    width: 1000px;
     display: flex;
     flex-wrap: wrap;
     /* align-content: start; Keeps everything up at top instead of default behavior */
