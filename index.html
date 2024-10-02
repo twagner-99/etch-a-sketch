@@ -30,6 +30,16 @@
             colorSquares.forEach((colorSquare) => {
                 colorSquare.addEventListener("mouseover", () => {
                     colorSquare.classList.add("hovered"); // For CSS
+
+                    function getColor() {
+                        return Math.floor(Math.random() * 256); // Returns value between 0 and 255
+                    }
+
+                    let red = getColor();
+                    let green = getColor();
+                    let blue = getColor();
+
+                    colorSquare.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
                 });
             });            
         }

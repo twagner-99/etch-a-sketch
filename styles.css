@@ -8,13 +8,14 @@
     width: 1000px;
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid black;
     /* align-content: start; Keeps everything up at top instead of default behavior */
     /* align-content no longer needed after including formula to auto adjust square sizes to force a square grid */
 }
 
-.hovered {
+/* .hovered {
     background-color: #5580b1;
-}
+} */
 
 button {
     margin-bottom: 10px;
