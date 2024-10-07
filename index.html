@@ -15,6 +15,7 @@
         const container = document.querySelector("#container");
 
         let gridSizeDefault = 16;
+        let hoveredSquareQty = 0;
 
         function createGrid(gridSize) {
             for (let i = 0; i < (gridSize * gridSize); i++) {
@@ -29,17 +30,26 @@
         
             colorSquares.forEach((colorSquare) => {
                 colorSquare.addEventListener("mouseover", () => {
-                    colorSquare.classList.add("hovered"); // For CSS
+                    hoveredSquareQty++;
 
-                    function getColor() {
-                        return Math.floor(Math.random() * 256); // Returns value between 0 and 255
+                    if (hoveredSquareQty > 10) {  // Used two if statements so both always run. Once Qty > 10, counter restarts.
+                        hoveredSquareQty = 1;
                     }
 
-                    let red = getColor();
-                    let green = getColor();
-                    let blue = getColor();
+                    if (hoveredSquareQty <= 10) {
+                        colorSquare.style.opacity = hoveredSquareQty * 0.1; // Returns opacity value between .1 and 1 before resetting so a fully colored square is achieved in ten mouseovers.
+                    }
 
-                    colorSquare.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+                    // function getColor() {
+                    //     return Math.floor(Math.random() * 256); // Returns value between 0 and 255
+                    // }
+
+                    // let red = getColor();
+                    // let green = getColor();
+                    // let blue = getColor();
+
+                    // colorSquare.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+                    colorSquare.style.backgroundColor = "rgb(23, 165, 105)";
                 });
             });            
         }
