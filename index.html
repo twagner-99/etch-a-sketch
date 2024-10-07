@@ -21,8 +21,8 @@
             for (let i = 0; i < (gridSize * gridSize); i++) {
                 const gridSquare = document.createElement("div");
                 gridSquare.classList.add("square"); // For CSS and nodeList
-                gridSquare.style.height = (1000 / gridSize) + "px"; // Went this route because setAttribute DID NOT WORK
-                gridSquare.style.width = (1000 / gridSize) + "px"; // Formula auto adjusts square sizes so grid is gridSize x gridSize in given space
+                gridSquare.style.height = (875 / gridSize) + "px"; // Went this route because setAttribute DID NOT WORK
+                gridSquare.style.width = (875 / gridSize) + "px"; // Formula auto adjusts square sizes so grid is gridSize x gridSize in given space
                 container.appendChild(gridSquare);
             }
 
